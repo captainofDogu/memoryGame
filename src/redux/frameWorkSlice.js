@@ -5,7 +5,8 @@ export const frameworkAdaptor = createEntityAdapter();
 const initialState = frameworkAdaptor.getInitialState();
 
 export const frameworkSelectors = frameworkAdaptor.getSelectors(
-  (state) => state.frameworks
+  (state) => state.frameworks // store.js deki adı vermemiz lazım 
+  
 );
 
 const frameworkSlice = createSlice({

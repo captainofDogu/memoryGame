@@ -16,17 +16,24 @@ export const frameworks = [
   // "browserify",
 ];
 export const duplicatedFrameworks = [...frameworks, ...frameworks];
-export const shuffle = (array) => {
-  let currentIndex = array.length,
-    temporaryValue,
-    randomIndex;
-
+export const shuffle = (array) => { // 20 tane dizi alıyor 
+  console.log(array)
+  let currentIndex = array.length
+  let temporaryValue,randomIndex;;
+  
+// burası bi karıştırıcı rasgele dağıtıyor cartları
+    //console.log(currentIndex,temporaryValue,randomIndex)
   while (0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
+    console.log("currentIndex",currentIndex) // 20
+    console.log("randomIndex",randomIndex) // 18
+    currentIndex -= 1;  // 19
+    temporaryValue = array[currentIndex]; // meteor js 
+    //console.log( "temporaryValue",  temporaryValue)
+    array[currentIndex] = array[randomIndex];  
+    //console.log("array[currentIndex] = array[randomIndex]; ",array[currentIndex] = array[randomIndex] )
+    array[randomIndex] = temporaryValue;   
+    console.log("array[randomIndex]",array[randomIndex])   
   }
   return array;
 };

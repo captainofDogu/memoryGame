@@ -10,10 +10,16 @@ import { duplicatedFrameworks, shuffle } from "./duplicatedFrameworks";
 
 function PlayGround() {
   const [openedFrameworks, setOpenedFrameworks] = useState([]);
+  console.log(openedFrameworks)
+
   const dispatch = useDispatch();
+
   const frameworks = useSelector(frameworkSelectors.selectAll);
+  console.log(frameworks)
   let completedCards = frameworks.filter((framework) => framework.complete);
 
+
+  // oyun bittikten sonra restart işlemi yaptırıyor 
   if (completedCards.length === 20) {
     Swal.fire({
       title: "Do you want to play again?",
@@ -33,12 +39,14 @@ function PlayGround() {
       dispatch(
         addFramework({
           id: index,
-          name,
+          name, // angular ,react vs
           close: true,
           complete: false,
           fail: false,
         })
+      
       )
+      
     );
   }, [dispatch]);
 
