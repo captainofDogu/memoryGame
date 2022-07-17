@@ -19,7 +19,7 @@ function Pointer() {
             {({ countUpRef }) => (
               <div>
                 <span ref={countUpRef}  />
-                {
+                
               </div>
             )}
           </CountUp>
