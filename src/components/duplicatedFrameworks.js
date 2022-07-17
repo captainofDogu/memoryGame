@@ -21,7 +21,7 @@ export const shuffle = (array) => { // 20 tane dizi alıyor
   let currentIndex = array.length
   let temporaryValue,randomIndex;;
   
-// burası bi karıştırıcı rasgele dağıtıyor cartları
+// burası bi karıştırıcı rasgele dağıtıyor cartları ikili yer değiştiriyor 
     //console.log(currentIndex,temporaryValue,randomIndex)
   while (0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex);

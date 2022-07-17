@@ -10,7 +10,7 @@ import { duplicatedFrameworks, shuffle } from "./duplicatedFrameworks";
 
 function PlayGround() {
   const [openedFrameworks, setOpenedFrameworks] = useState([]);
-  console.log(openedFrameworks)
+  console.log(openedFrameworks) // karta bastıgımda açık kalmasını sağlıyoruz 
 
   const dispatch = useDispatch();
 
@@ -65,7 +65,7 @@ function PlayGround() {
 
     if (openedFrameworks.length > 1) {
       setTimeout(() => {
-        setTimeout(() => {
+        setTimeout(() => { // açılan 2 kart da aynı cart sa onları güncelliyoruz
           if (
             openedFrameworks[0].name === openedFrameworks[1].name &&
             openedFrameworks[0].index !== openedFrameworks[1].index
@@ -79,8 +79,8 @@ function PlayGround() {
                   },
                 })
               )
-            );
-            dispatch(updatePoint(50));
+            );// Eğer adları aynı id leri farklıysa kapatma tam tersiyse kapat 
+            dispatch(updatePoint(50)); // eğer doğru bilirse 50 puan ekle
           } else {
             openedFrameworks.forEach((openedFramework) =>
               dispatch(
